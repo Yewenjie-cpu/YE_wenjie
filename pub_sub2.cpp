@@ -8,11 +8,11 @@ class PublisherNode : public rclcpp::Node{
     private:
     size_t count_;//定义一个无符号的整数类型
     rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;//这个在ros2的定义中就是类嵌套了类
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;//里面那个是命名空间的嵌套，此时作为模板参数
     void timer_callback(){
         auto message = std_msgs::msg::String();
         message.data = "Hello ROS2! 计数: " + std::to_string(count_++);
-        publisher_->publish(message);//所以这里就出现了对象解引用调用另一个类的成员函数的神秘状况
+        publisher_->publish(message);//本质：std::shared_ptr<std_msgs::msg::String>
         RCLCPP_INFO(this->get_logger(), "发布: '%s'", message.data.c_str());//这里就是一个简单的日志器，getlogger就是类似获取当前点位置的函数
     }
     public:
