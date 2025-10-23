@@ -21,7 +21,7 @@
 3.<build_depend>message_generation</build_depend>   //构建时依赖（声明第三方库的位置）
 4.<buildtool_depend>ament_cmake</buildtool_depend>   //构建工具依赖（colcon的工具，就是colcon的操作方式）
 5.<license>MIT</license>    //协议是必须的，这个是开源协议（仅是名称但现实中对应有明文）
-PS:依赖声明后，才会添加包到环境中，否则后续的操作无效。
+PS:依赖声明后，才会添加包到环境中，否则后续的操作无效。(外部的包)
 二.cmakelist配置（与xml息息相关）
 ......
 
