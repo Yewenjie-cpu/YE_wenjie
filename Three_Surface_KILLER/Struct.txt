@@ -1,0 +1,35 @@
+======================================================================================================================
+//良好功能包的结构
+rm_vision_package/
+├── CMakeLists.txt
+├── package.xml
+├── include/                          # 头文件目录
+│   └── rm_vision_package/           # 与包名一致的子目录
+│       ├── algorithms/               # 算法头文件
+│       │   ├── armor_detector.hpp
+│       │   ├── predictor.hpp
+│       │   └── filter.hpp
+│       └── utils/                    # 工具类头文件
+│           ├── image_utils.hpp
+│           └── math_utils.hpp
+├── src/                             # 源代码目录
+│   ├── algorithms/                  # 算法实现
+│   │   ├── armor_detector.cpp
+│   │   ├── predictor.cpp
+│   │   └── filter.cpp
+│   ├── utils/                       # 工具类实现
+│   │   ├── image_utils.cpp
+│   │   └── math_utils.cpp
+│   └── nodes/                       # ROS2节点
+│       ├── vision_node.cpp
+│       └── test_node.cpp
+├── launch/                          # launch文件//代办
+│   ├── vision.launch.py
+│   └── test.launch.py
+└── config/                          # 配置文件//代办
+    ├── detector_params.yaml
+    └── vision_config.yaml
+    
+======================================================================================================================
+//完整的cmakelist结构
+
